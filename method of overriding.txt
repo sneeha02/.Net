@@ -1,0 +1,48 @@
+using System;
+
+namespace overriding
+{
+    public class Animal
+    {
+        public virtual void Speak()
+        {
+            Console.WriteLine("Animal speaks");
+        }
+    }
+    public class Dog : Animal
+    {
+        public override void Speak()
+        {
+            Console.WriteLine("Dog barks");
+        }
+        public class Cat : Animal
+        {
+            public override void Speak()
+            {
+                Console.WriteLine("Cat Meow");
+            }
+        }
+        public class Program
+        {
+            public static void Main()
+            {
+                Animal myAnimal = new Animal();
+                myAnimal.Speak();
+
+                Animal myDog = new Dog();
+                myDog.Speak();
+
+                Animal myDog2 = new Dog();
+                myDog2.Speak();
+
+                Animal myanimal = new Cat();
+                myanimal.Speak();
+
+
+
+
+            }
+        }
+    }
+}
+   

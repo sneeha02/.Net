@@ -1,0 +1,59 @@
+using System;
+
+namespace jumpsatement1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Starting method");
+            Console.WriteLine("\n Using goto statement");
+            UseGoto();
+            Console.WriteLine("\n Using break statement");
+            UseBreak();
+            Console.WriteLine("\n Using return statement");
+            UseReturn();
+            Console.WriteLine("Ending Main method");
+
+
+        }
+        static void UseGoto()
+        {
+            int x = 5;
+            if (x == 5)
+            {
+                goto skip;
+            }
+            Console.WriteLine("This will not printed because x==5");
+        skip:
+            Console.WriteLine("\n Exited the conditional block using goto.");
+        }
+        static void UseBreak()
+        {
+            int y = 5;
+            switch (y)
+            {
+                case 1:
+                    Console.WriteLine("y is 1");
+                    break;
+                case 5:
+                    Console.WriteLine("y is 5");
+                    break;
+                default:
+                    Console.WriteLine("y isnot 1 or 5 ");
+                    break;
+            }
+            Console.WriteLine("Exited the switch block using break.");
+            }
+        static void UseReturn()
+        {
+            int Z = 5;
+            if (Z == 5)
+            {
+                return;
+            }
+            Console.WriteLine("This will not be printed because z==5");
+            Console.WriteLine("This  line will never be reached if z==5");
+        }
+    }
+}

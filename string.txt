@@ -1,0 +1,34 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace Strings
+{
+    public  static class Program
+    {
+         public static void Main(string[] args)
+        {
+            string s = "Hello";
+            Console.WriteLine(s[0]);
+
+            string str1 = "hello";
+            string str2 = "world";
+            string result = str1 + "" + str2;
+            Console.WriteLine(result);
+
+
+            string result2 = string.Concat(str1, "", str2);
+            Console.WriteLine(result2);
+
+            
+            string name = "Alice";
+            int age = 30;
+       
+
+            string message = $"My name is{name} and I am {age} years old.";
+            string result4=$"Dear {name},your account is debited by{ age}";
+            Console.WriteLine(message);
+            Console.WriteLine(result4);
+
+        }
+    }
+}
