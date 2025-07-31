@@ -1,0 +1,42 @@
+//partial class help to make more than one class of same name  brokebn to subclass for better understand
+using System;
+
+namespace Partialclass
+{
+    public partial class MyClass
+    {
+        int a;
+        public void Method1() {
+            Console.WriteLine("Method from File1");
+        }
+    }
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            MyClass myInstance = new MyClass();
+
+            myInstance.Method1();
+            myInstance.Method2();
+            MyClass myInstance2 = new MyClass();
+            myInstance2.Method1();
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Partialclass
+{
+    public partial class MyClass
+    { 
+      
+        public void Method2()
+        {
+            a = 10;
+            Console.WriteLine("Method2 from file2");
+        }
+    }
+}
