@@ -1,0 +1,44 @@
+using System;
+
+namespace static_class
+{
+
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            int sum = MathUtilities.Add(3, 5);
+            int factorial = MathUtilities.Factorial(5);
+            Console.WriteLine($"Sum:{sum}");
+            Console.WriteLine($"Factorial of 5:{factorial}");
+            //console.writeLine($"Pi:{Constants.Pi}");
+        }
+        void Testfunc()
+        {
+            MathUtilities.Add(3, 5);
+        }
+    }
+
+    //utility class
+    public static class MathUtilities
+    {
+        //int a; cannot make field
+        //public int a { get; set; } cant make property
+
+        //a static methis for adding two interger
+        public static int Add(int a, int b)
+        {
+            return a + b;
+        }
+        //a static class method for calculating the factorial of a number
+        public static int Factorial(int number)
+        {
+            if (number <= 1)
+                return 1;
+            return number * Factorial(number - 1);
+        }
+    }
+}
+
+ 
