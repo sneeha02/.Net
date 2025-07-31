@@ -1,0 +1,61 @@
+using System;
+
+namespace TryCatchh
+{
+    public static class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int result = Divide(10, 1);
+
+                Console.WriteLine($"Result of division:{result}");
+                int[] a = { 1, 2, 3, 4 };
+                Console.WriteLine(a[6]);
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Error:Cannot divide by zero");
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occured:{ex.Message}");
+                // throw ex
+            }
+            finally
+            {
+                Console.WriteLine("finally block executed.");
+            }
+            Console.WriteLine("Program continues after try-catch-finally block.");
+        }
+          static int Divide(int numerator, int denominator)
+          {
+                if (denominator == 0)
+                {
+                // manually throw an exception
+                    throw new DivideByZeroException();
+                }
+                else
+                {
+                    return numerator / denominator;
+                }
+          }
+        static int Element(int[] array, int index)
+        {
+            if (index >= array.Length) {
+                throw new IndexOutOfRangeException();
+            }
+            else
+            {
+                return array[index];
+            }
+        }
+
+    }
+}
+
