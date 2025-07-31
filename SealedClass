@@ -1,0 +1,29 @@
+using System;
+
+namespace Sealedclass
+{
+    public sealed class MySealedClass
+    {
+        private readonly string message = "Hello, I am a Sealed class";
+        public void DisplayMessage()
+        {
+            Console.WriteLine( $"Message from sealed class:{message}");
+        }
+    }
+    //public  class hclass : MySealedClass
+    //{
+
+    //} cannot inherit from base class in sealed class but if base class is not sealed and derived class sealed then inherit no error occur
+    public static class Program
+    {
+        static void Main(string[] args)
+        {
+            MySealedClass sealedInstance = new MySealedClass();
+            MySealedClass sealedInstance1 = new MySealedClass();
+            sealedInstance.DisplayMessage();
+
+        }
+    }
+}
+
+// sealed classcannot be used as base class
