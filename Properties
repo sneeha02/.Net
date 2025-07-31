@@ -1,0 +1,60 @@
+using System;
+using System.IO.Pipes;
+
+namespace Properties
+{
+    public class Person
+    {
+        private string fullname;
+        //property too get and set the name
+        public string Name
+        {
+            get
+            {
+                if(fullname == "Ram")
+                {
+                    return fullname;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                    fullname = value;
+                else
+                    Console.WriteLine("Name cannot be empty");
+            }
+        }
+        //Auto-implemented age property
+        public int Age { get; set; }
+     
+    }
+    public static class Program
+    {
+        static void Main()
+        {
+            Person person = new Person();
+            //setting name using property
+            person.Name = "Ram";//output john
+
+            //v getting value using property
+            Console.WriteLine($"Name:{person.Name}");
+
+            //set and get proprty age using auto
+            person.Age = 25;
+            Console.WriteLine(($"Age:{person.Age}"));
+
+            //person.Name = "";
+
+        }
+    }
+}
+
+
+//properties  help to get or set the value of private variable in class
+
+
